@@ -1,90 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Todo List</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
+      #todo-container {
+        max-width: 400px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
 
-        header {
-            background-color: #3498db;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-        }
+      #todo-header {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      #todo-list {
+        padding: 20px;
+      }
 
-        li {
-            padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
+      .todo-item {
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin-bottom: 8px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        display: flex; /* Display items in a row */
+        justify-content: space-between; /* Add space between the list item and button */
+        align-items: center; /* Center vertically */
+      }
 
-        li:hover {
-            background-color: #ecf0f1;
-        }
+      
+      .todo-item input {
+        margin-right: 10px;
+      }
 
-        input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-right: 10px;
-            font-size: 16px;
-        }
+      #add-todo {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ecf0f1;
+      }
 
-        button {
-            background-color: #2ecc71;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+      #add-todo input {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+      }
+
+      #add-todo button {
+        padding: 8px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .remove_btn {
+        padding: 8px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .saveButton,
+      .edit_btn {
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .todo-item-container {
+        padding: 4px;
+        margin-bottom: 8px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content:space-around;
+      }
     </style>
-</head>
-<body>
-
-    <div class="container">
-        <header>Beautiful Todo List</header>
-        <ul id="tot-list">
-           
-            <!-- Add more items as needed -->
-        </ul>
-        <div>
-            <input type="text" id="input" placeholder="Add a new todo">
-            <button id="push">Add</button>
-        </div>
+  </head>
+  <body>
+    <div id="todo-container">
+      <div id="todo-header">
+        <h2>Todo List</h2>
+      </div>
+      <ul id="todo-list"></ul>
+      <div id="add-todo">
+        <input type="text" id="todo-input" placeholder="Add a new todo" />
+        <button id="btn">Add</button>
+      </div>
     </div>
-<script src="./todo.js"></script>
-</body>
+    <script src="todo.js"></script>
+  </body>
 </html>

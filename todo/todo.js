@@ -1,11 +1,57 @@
-const button = document.querySelector('#push');
-const input = document.querySelector('#input')
-const todoList = document.querySelector('#todo-list') 
+const btn = document.querySelector('#btn')
+const todo_input = document.querySelector('#todo-input')
+const todo_list = document.querySelector('#todo-list')
 
-button.addEventListener('click',(e) => {
+//Add Todo List 
+btn.addEventListener('click', (e) => {
     e.defaultPrevented
-   const getValue =  input.value
-   
-   //Validation 
-   if(getValue === )
+    const getValue = todo_input.value
+
+    //Validation 
+    const word = getValue.trim().split(/\s+/)
+    if (!isNaN(getValue) || word.length > 5) {
+        alert('Please enter a valid todo (not a number and not more than 5 words).');
+    }
+
+    //Create Container Div class for list
+    const container = document.createElement('div')
+    container.classList.add('todo-item-container')
+
+    const li = document.createElement('li')
+
+    //Remove Button create on runtime 
+    const remove_btn = document.createElement('button')
+    remove_btn.classList.add('remove_btn')
+    remove_btn.id = "remove_btn"
+    remove_btn.textContent = "Remove"
+    console.log(remove_btn)
+
+    remove_btn.addEventListener('click', function (e) {
+        e.preventDefault
+        container.remove()
+    })
+
+    //EditAble form or Input 
+    function editAbleInput(value,onSave){
+        //Create Input Field
+        const input = document.createElement('input')
+        input.type = "text"
+        input.classList.add('input')
+        input.value = value 
+
+        //Create Button on the form
+        const saveButton = document.createElement('button')
+        saveButton.textContent = 'Save';
+        saveButton.classList.add('saveButton')
+
+        //Create Warper for button and input whole warp
+        
+    }
+
+    li.appendChild(document.createTextNode(getValue))
+    container.appendChild(li);
+    container.appendChild(remove_btn);
+    todo_list.appendChild(container);
+    todo_input.value = ""
 })
+
