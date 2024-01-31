@@ -7,4 +7,6 @@ Using DOM also DOM with html and DOM with css
 
 In this project we have todo list html just input and ul and button and we fetch all element in javascript js file 
 
+We have first if we create element on runtime in js using createElement and then appendchild to other id class
+
 
