@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      h1,
+      p,
+      input,
+      button {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Flex container styling */
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      /* Card styling for the first two cards */
+      .card {
+        flex: 0 0 40%; /* 48% width to leave some space between cards */
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Card styling for the last card (full width) */
+      .last-card {
+        flex: 0 0 40%; /* 48% width to leave some space between cards */
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Budget section styling */
+      .budget-section {
+        text-align: center;
+      }
+
+      p {
+        margin: 5px 0; /* Adjust the margin for spacing between lines */
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 50%;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- Budget Section -->
+      <div class="card">
+        <div class="container">
+          <div class="budget-section">
+            <h1>Budget</h1>
+            <div class="input-container">
+              <input type="number" placeholder="Enter a budget" />
+              <button>Budget</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expenses Section -->
+      <div class="card">
+        <div class="container">
+          <div class="budget-section">
+            <h1>Expenses</h1>
+            <div class="input-container">
+              <input type="text" placeholder="Enter an Expense Name" />
+              <input type="number" placeholder="Enter an Expense Amount" />
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Last Card (full width) -->
+      <div class="last-card">
+        <div class="container">
+          <div class="budget-section">
+            <h1>Expenses</h1>
+            <div class="input-container">
+              <p>Total Budget</p>
+              <p>0</p>
+            </div>
+            <div class="input-container">
+              <p>Expenses</p>
+              <p>0</p>
+            </div>
+            <div class="input-container">
+              <p>Balance</p>
+              <p>0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="last-card">
+        <div class="container">
+          <div class="budget-section">
+            <h1>Expenses</h1>
+            <div class="input-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
