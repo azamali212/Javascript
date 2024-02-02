@@ -89,14 +89,15 @@
   </head>
   <body>
     <div class="flex-container">
+
       <!-- Budget Section -->
       <div class="card">
         <div class="container">
           <div class="budget-section">
             <h1>Budget</h1>
             <div class="input-container">
-              <input type="number" placeholder="Enter a budget" />
-              <button>Budget</button>
+              <input type="number" id="budget" placeholder="Enter a budget" />
+              <button id="budget-button">Budget</button>
             </div>
           </div>
         </div>
@@ -108,9 +109,9 @@
           <div class="budget-section">
             <h1>Expenses</h1>
             <div class="input-container">
-              <input type="text" placeholder="Enter an Expense Name" />
-              <input type="number" placeholder="Enter an Expense Amount" />
-              <button>Submit</button>
+              <input type="text" id="expense-name" placeholder="Enter an Expense Name" />
+              <input type="number" id="expense-amount" placeholder="Enter an Expense Amount" />
+              <button id="expense-button">Submit</button>
             </div>
           </div>
         </div>
@@ -121,17 +122,17 @@
         <div class="container">
           <div class="budget-section">
             <h1>Expenses</h1>
-            <div class="input-container">
+            <div class="input-container" id="total-budget">
               <p>Total Budget</p>
-              <p>0</p>
+              <p id="budget-value">0</p>
             </div>
-            <div class="input-container">
+            <div class="input-container" id="total-expense">
               <p>Expenses</p>
-              <p>0</p>
+              <p id="expense-name">0</p>
             </div>
-            <div class="input-container">
+            <div class="input-container" id="total-balance">
               <p>Balance</p>
-              <p>0</p>
+              <p id="balance-value">0</p>
             </div>
           </div>
         </div>
@@ -146,5 +147,7 @@
         </div>
       </div>
     </div>
+
+    <script src="./budget.js"></script>
   </body>
 </html>
