@@ -33,6 +33,9 @@ expenseButton.addEventListener("click", function () {
             const newBalance = currentBalance - enteredExpenseAmount;
             balanceValue.innerText = newBalance;
             totalExpenseValue.innerText = enteredExpenseAmount
+
+            //Create list Item
+            
             expenseName.value = "";
             expenseAmount.value = "";
         } else {
