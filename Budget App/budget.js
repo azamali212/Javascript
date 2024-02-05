@@ -38,6 +38,7 @@ expenseButton.addEventListener("click", function () {
             const li = document.createElement('li');
             const expenseNameSpan = document.createElement('span');
             const expenseAmountSpan = document.createElement('span');
+            //SAme as create edit and delete button amd push it into expenses array 
             expenseNameSpan.innerText = enteredExpenseName;
             expenseAmountSpan.innerText = `$${enteredExpenseAmount}`;
             expenseNameSpan.classList.add('expense-name');
