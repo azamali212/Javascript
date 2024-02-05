@@ -85,11 +85,33 @@
       button:hover {
         background-color: #45a049;
       }
+      /* List item styling */
+      #underList li {
+        list-style-type: none;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Style for expense name in the list item */
+      #underList li .expense-name {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      /* Style for expense amount in the list item */
+      #underList li .expense-amount {
+        color: #ff6347; /* a red color, you can choose your own color */
+      }
     </style>
   </head>
   <body>
     <div class="flex-container">
-
       <!-- Budget Section -->
       <div class="card">
         <div class="container">
@@ -109,8 +131,16 @@
           <div class="budget-section">
             <h1>Expenses</h1>
             <div class="input-container">
-              <input type="text" id="expense-name" placeholder="Enter an Expense Name" />
-              <input type="number" id="expense-amount" placeholder="Enter an Expense Amount" />
+              <input
+                type="text"
+                id="expense-name"
+                placeholder="Enter an Expense Name"
+              />
+              <input
+                type="number"
+                id="expense-amount"
+                placeholder="Enter an Expense Amount"
+              />
               <button id="expense-button">Submit</button>
             </div>
           </div>
@@ -142,7 +172,9 @@
         <div class="container">
           <div class="budget-section">
             <h1>Expenses</h1>
-            <div class="input-container"></div>
+            <div class="input-container">
+              <ul id="underList"></ul>
+            </div>
           </div>
         </div>
       </div>
