@@ -38,16 +38,32 @@ expenseButton.addEventListener("click", function () {
             const li = document.createElement('li');
             const expenseNameSpan = document.createElement('span');
             const expenseAmountSpan = document.createElement('span');
-            //SAme as create edit and delete button amd push it into expenses array 
+            //Same as create edit and delete button amd push it into expenses array 
+
+            //Edit Button
+            const editAbleButton = document.createElement('button')
+            editAbleButton.innerText = "Edit"
+            editAbleButton.classList.add('edit-button');
+
+
+            //Delete Button
+            const deleteButton = document.createElement('button')
+            deleteButton.innerText = "Delete"
+            deleteButton.classList.add('delete-button');
+
             expenseNameSpan.innerText = enteredExpenseName;
             expenseAmountSpan.innerText = `$${enteredExpenseAmount}`;
             expenseNameSpan.classList.add('expense-name');
             expenseAmountSpan.classList.add('expense-amount');
+
             li.appendChild(expenseNameSpan);
             li.appendChild(expenseAmountSpan);
+            li.appendChild(editAbleButton);
+            li.appendChild(deleteButton);
+            
             const underList = document.querySelector('#underList');
             underList.appendChild(li);
-            expenses.push({ name: enteredExpenseName, amount: enteredExpenseAmount });
+            expenses.push({ name: enteredExpenseName, amount: enteredExpenseAmount,editButton: editAbleButton,deleteButton:deleteButton });
             expenseName.value = "";
             expenseAmount.value = "";
         } else {
