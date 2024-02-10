@@ -25,8 +25,6 @@ budgetButton.addEventListener("click", function () {
 })
 
 
-
-
 //Set Expense Area
 expenseButton.addEventListener("click", function () {
     const enteredExpenseAmount = parseFloat(expenseAmount.value)
@@ -54,7 +52,7 @@ expenseButton.addEventListener("click", function () {
                 for (let i = 0; i < expenses.length; i++) {
                     if (expenses[i].name === name && expenses[i].amount === amount) {
                         return i;
-                        
+
                     }
                 }
                 return -1;
@@ -63,18 +61,25 @@ expenseButton.addEventListener("click", function () {
             function editExpense(name, amount) {
                 const index = findExpenseIndexByNameAndAmount(name, amount)
                 if (index !== -1) {
+                    const oldAmount = expenses[index].amount
+                    console.log(oldAmount)
                     const newExpenseName = prompt("Enter the new expense name:", expenses[index].name);
                     const newExpenseAmount = parseFloat(prompt("Enter the new expense amount:", expenses[index].amount));
 
                     if (newExpenseName !== null && !isNaN(newExpenseAmount)) {
                         expenses[index].name = newExpenseName;
                         expenses[index].amount = newExpenseAmount;
+                        const difference = newExpenseAmount - oldAmount;
 
                         // Update the DOM to reflect the changes
                         const expenseNameSpan = document.querySelectorAll('.expense-name')[index];
                         const expenseAmountSpan = document.querySelectorAll('.expense-amount')[index];
                         expenseNameSpan.innerText = newExpenseName;
                         expenseAmountSpan.innerText = `$${newExpenseAmount}`;
+
+                        const currentBalance = parseFloat(balanceValue.innerText)
+                        const newBalance = currentBalance - difference
+                        balanceValue.innerText = newBalance
                     }
                 } else {
                     alert("Expense not found.");
@@ -90,6 +95,36 @@ expenseButton.addEventListener("click", function () {
                     editExpense(expenseName, expenseAmount);
                 }
             });
+
+            function deleteExpense(name, amount) {
+                const index = findExpenseIndexByNameAndAmount(name, amount);
+                if (index !== -1) {
+                    const deletedExpense = expenses.splice(index, 1)[0]; // Remove the expense from the array
+                    const currentBalance = parseFloat(balanceValue.innerText);
+                    const newBalance = currentBalance + deletedExpense.amount; // Add back the deleted expense amount to the balance
+                    balanceValue.innerText = newBalance;
+                    const listItem = document.querySelectorAll('li')[index];
+                    listItem.remove(); // Remove the expense from the DOM
+
+                    const DelAddExpeneses = parseFloat(totalExpenseValue.innerText)
+                    const newTotalExpense = DelAddExpeneses - deletedExpense.amount
+                    totalExpenseValue.innerText = newTotalExpense.toFixed(2)
+                } else {
+                    alert("Expense not found.");
+                }
+            }
+
+            // Event listener for delete button click
+            document.addEventListener('click', function (event) {
+                if (event.target.classList.contains('delete-button')) {
+                    const listItem = event.target.parentElement;
+                    const expenseName = listItem.querySelector('.expense-name').innerText;
+                    const expenseAmount = parseFloat(listItem.querySelector('.expense-amount').innerText.replace('$', ''));
+                    deleteExpense(expenseName, expenseAmount);
+                }
+            });
+
+
             //Delete Button
             const deleteButton = document.createElement('button')
             deleteButton.innerText = "Delete"
