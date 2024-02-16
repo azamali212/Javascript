@@ -36,3 +36,30 @@
 // for(let i in obj) {
 //     console.log(obj[i])
 // }
+
+//Game Example
+// let gameNum = 25;
+// let user = prompt("enter number")
+
+// while(user!=gameNum){
+//     user = prompt("Again")
+// }
+// console.log("Congratualteion")
+
+//Strings
+
+// str.slice(start,end) 
+//str.concat(str2)//join str 2 with str1
+//str.replace(searchVal,newVal)
+
+//Example
+// let userName = prompt("Enter Name")
+// if(userName.startsWith("@")){
+//     console.log(userName)
+   
+// }
+// else{
+//     userName =prompt("Again Enter name with @")
+//     console.log(userName)
+// }
+
