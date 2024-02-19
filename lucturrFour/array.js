@@ -57,3 +57,24 @@ for (let index = 0; index < num.length; index++) {
     
 }
 console.log(num);
+
+//Simple Project 
+// let input = parseInt(prompt("Enter Number"))
+// console.log(input)
+
+// let array = [20,110,520,24,230,10,240]
+// let found = false;
+
+// for(let j= 0; j<array.length;j++){
+//     if (array[j] === input) {
+//         console.log(found = true)
+//         break;
+//     }
+// }
+
+// if (found) {
+//     console.log("pass");
+// } else {
+//     console.log("fail");
+// }
+
