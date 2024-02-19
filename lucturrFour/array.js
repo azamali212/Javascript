@@ -32,3 +32,28 @@ for(i =0;i<mark.length;i++){
     sum = sum + mark[i]
 }
 console.log(sum)
+
+//Practice
+let num = [200];
+// for(let i = 0; i<num.length;i++){
+//     let offer = num[i] * 10 
+//     console.log(offer)  
+//     num[i] = num[i] - offer 
+//     console.log(num[i])
+// }
+
+// let ind =0
+// for(let val of num){
+//     let offer = val / 10;
+//     num[ind] = num[ind] -offer
+//     console.log(num[ind])
+// }
+
+
+for (let index = 0; index < num.length; index++) {
+    let offer = num[index] / 10;
+    console.log("Hlo",num[index]);
+    num[index] = num[index] - offer;
+    
+}
+console.log(num);
