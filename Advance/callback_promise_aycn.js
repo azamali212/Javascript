@@ -62,13 +62,35 @@
 
 //Promise , its a Solution of callback hell
 
-let promise = new Promise((resolve,reject)=>{
-    console.log("hello")
-     //resolve("success")
-     reject("error")
-})
-promise.then(()=>{
-    console.log("Resolve")
-}).catch((err)=>{
-    console.log("Error",err)
-})
+// let promise = new Promise((resolve,reject)=>{
+//     console.log("hello")
+//      //resolve("success")
+//      reject("error")
+// })
+// promise.then(()=>{
+//     console.log("Resolve")
+// }).catch((err)=>{
+//     console.log("Error",err)
+// })
+
+//Async Await easy from callback hell and promises
+// async function fun(){
+//     console.log("hlo") 
+// }
+// console.log(fun())
+
+function api(a,b){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let sum = a+b;
+            console.log(sum)
+        }, 5000);
+    })
+}
+async function getWetherData(){
+    await api(5,6)
+}
+
+getWetherData()
+
+//IIFE Function is used to call Immediately invoked in your project but this function did't call any other place of project just one time, its work with no name of function just function keyword and does not call it 
