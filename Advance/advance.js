@@ -93,13 +93,32 @@
 // console.log(product1)
 
 //Spread Operator same work as rest but they copy of other object and store in varable and with seprate storage not same storge or origanle , spread opertor also use combind two aray or objects
-let product1 = {
-    id:1,
-    name :"Mobile",
-    price: 5000,
-    qty:5
-}
+// let product1 = {
+//     id:1,
+//     name :"Mobile",
+//     price: 5000,
+//     qty:5
+// }
 
-let product2 = {...product1}
-console.log(product2)
-console.log(product1)
+// let product2 = {...product1}
+// console.log(product2)
+// console.log(product1)
+let ul = document.querySelector("ul")
+
+fetch('data.json').then((response) => {
+    // console.log(response.status)
+    if (!response) {
+        console.log("error")
+    }
+    return response.json();
+}).then(data => {
+    // console.log(data.status)
+    let store = data.students
+    // console.log(store)
+    for (card of store) {
+        let li = document.createElement("li")
+        li.innerText = `${card.id}:${card.name}:${card.grade}`
+        ul.appendChild(li)
+    }
+})
+
